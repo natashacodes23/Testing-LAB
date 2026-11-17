@@ -12,22 +12,22 @@ def test_short_delay_gives_nothing():
 
 
 def test_delay_90_minutes():
-    assert refund(80.0, 90) == ____
+    assert refund(80.0, 90) == 20.0
 
 
 def test_delay_exactly_60_minutes():
-    assert refund(80.0, 60) == ____
+    assert refund(80.0, 60) == 20.0
 
 
 def test_delay_150_minutes():
-    assert refund(80.0, 150) == ____
+    assert refund(80.0, 150) == 40.0
 
 
 def test_small_refund_is_not_paid():
-    assert refund(12.0, 90) == ____
+    assert refund(12.0, 90) == 0.0
 
 
 # Your own test: a refund of exactly 4.00 euro IS paid out.
 # Pick a ticket price and a delay that give exactly 4.00.
 def test_exactly_4_euro_is_paid():
-    assert refund(____, ____) == 4.0
+    assert refund(16.0, 60) == 4.0
