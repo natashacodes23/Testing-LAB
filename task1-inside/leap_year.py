@@ -15,5 +15,7 @@ def is_leap_year(year):
 
     >>> is_leap_year(2024)
     True
+    >>> is_leap_year(1900)
+    False
     """
-    return year % 4 == 0
+    return year % 4 == 0 and year % 100 != 0 or year % 400 == 0
