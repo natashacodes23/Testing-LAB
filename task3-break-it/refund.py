@@ -10,7 +10,9 @@ The rules (this is the specification):
 
 def refund(ticket_price, delay_minutes):
     """Return the refund in euro for a delayed train."""
-    if delay_minutes >= 120:
+    if ticket_price < 0 or delay_minutes < 0:
+        raise ValueError("negative input")
+    elif delay_minutes >= 120:
         amount = ticket_price * 0.50
     elif delay_minutes >= 60:
         amount = ticket_price * 0.25

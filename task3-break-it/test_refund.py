@@ -9,8 +9,8 @@ from refund import refund
 @pytest.mark.parametrize("delay, expected", [
     (59, 0.0),
     (60, 20.0),
-    (119, ____),
-    (120, ____),
+    (119, 20.0),
+    (120, 40.0),
 ])
 def test_borders(delay, expected):
     assert refund(80.0, delay) == expected
@@ -23,4 +23,5 @@ def test_negative_price_is_rejected():
 
 
 def test_negative_delay_is_rejected():
-    ____  # write this test yourself (look at the one above)
+    with pytest.raises(ValueError):
+        refund(80.0, -30)
